@@ -24,7 +24,8 @@ import org.mockito.MockitoAnnotations;
 import java.time.LocalDateTime;
 
 
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -38,6 +39,7 @@ class PurchaseAdminServiceImplTest {
     @Mock
     private PurchaseDao repository;
     private AutoCloseable autoCloseable;
+    @Autowired
     private PurchaseAdminServiceImpl underTest;
 
 
@@ -45,7 +47,7 @@ class PurchaseAdminServiceImplTest {
     @BeforeEach
     void setUp() {
         autoCloseable = MockitoAnnotations.openMocks(this);
-        underTest = new PurchaseAdminServiceImpl(repository);
+        underTest.setDao(repository);
     }
 
     @AfterEach

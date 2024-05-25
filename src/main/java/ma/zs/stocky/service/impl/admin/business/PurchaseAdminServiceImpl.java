@@ -342,4 +342,8 @@ public class PurchaseAdminServiceImpl implements PurchaseAdminService {
     }
 
     private PurchaseDao dao;
+
+    public void setDao(PurchaseDao dao) {
+        this.dao = dao;
+    }
 }

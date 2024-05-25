@@ -26,5 +26,20 @@ jobs:
       - name: Compile with Maven
         run: mvn compile
 
-      - name: Run Unit Tests with Maven
-        run: mvn test
+      - name: Run Unit Tests with Maven Using JUNIT
+        run: mvn compile
+
+      - name: Run Integration Tests with Maven Using Karate
+        run: mvn compile
+
+      - name: Run Integration Quality with Sonar
+        run: mvn compile
+
+      - name: Run SAST with Sonar
+        run: mvn compile
+
+      - name: Run Package with Maven
+        run: mvn compile
+
+      - name: Run Deploy with Docker
+        run: mvn compile

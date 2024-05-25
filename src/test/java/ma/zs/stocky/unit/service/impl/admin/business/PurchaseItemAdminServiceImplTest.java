@@ -41,7 +41,8 @@ class PurchaseItemAdminServiceImplTest {
     @BeforeEach
     void setUp() {
         autoCloseable = MockitoAnnotations.openMocks(this);
-        underTest = new PurchaseItemAdminServiceImpl(repository);
+        underTest = new PurchaseItemAdminServiceImpl();
+        underTest.setDao(repository);
     }
 
     @AfterEach

@@ -306,9 +306,10 @@ public class PurchaseItemAdminServiceImpl implements PurchaseItemAdminService {
     @Autowired
     private ProductAdminService productService ;
 
-    public PurchaseItemAdminServiceImpl(PurchaseItemDao dao) {
+
+    private @Autowired PurchaseItemDao dao;
+
+    public void setDao(PurchaseItemDao dao) {
         this.dao = dao;
     }
-
-    private PurchaseItemDao dao;
 }
