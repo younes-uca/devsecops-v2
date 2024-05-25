@@ -24,7 +24,7 @@ jobs:
           cache: maven
 
       - name: Compile with Maven
-        run: mvn -B compile
+        run: mvn compile
 
       - name: Run Unit Tests with Maven
         run: mvn test
